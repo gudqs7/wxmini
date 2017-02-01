@@ -1,0 +1,163 @@
+/* pages/cart/cart.wxss */
+
+#cartlist {
+  height: 1035rpx;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.list-item {
+  padding: 5px 0px 0px 0px;
+  background: white;
+  border-top: 1px #ccc solid;
+  border-bottom: 1px #ccc solid;
+  clear: both;
+  margin-bottom: 50rpx;
+}
+
+.item-head {
+  padding: 0rpx 20rpx;
+  line-height: 70rpx;
+}
+
+.item-head .gray {
+  color: gray;
+  padding: 0rpx 20rpx;
+}
+
+.item-body {
+  padding: 0rpx 0rpx;
+  clear: both;
+  height: 250rpx;
+  margin: 0px;
+  background: #fcfcfc;
+}
+
+.body-left {
+  width: 250rpx;
+  display: inline-block;
+  padding-left: 20rpx;
+}
+
+.body-left .ctr {
+  position: relative;
+  display: inline;
+  left: 10rpx;
+}
+
+.body-right {
+  padding-left: 5rpx;
+  padding-right: 15rpx;
+  width: 450rpx;
+  clear: both;
+  display: inline-block;
+  color: #777;
+}
+
+.right-head {
+  padding: 10rpx 0rpx;
+  font-size: 14px;
+}
+
+.right-middle {
+  padding: 10rpx 0rpx;
+  font-size: 16px;
+}
+
+.right-foot {
+  padding: 10rpx 0rpx;
+  font-size: 16px;
+}
+
+.red {
+  color: orangered;
+  padding-right: 19rpx;
+}
+
+.middleline {
+  text-decoration: line-through;
+}
+
+.right {
+  float: right;
+}
+
+.body-hidden {
+  width: 450rpx;
+  clear: both;
+  display: inline-block;
+  color: #777;
+}
+
+.hidden-right {
+  display: inline-block;
+  width: 50rpx;
+  height: 160rpx;
+  padding: 75rpx 25rpx 7px 35rpx;
+  background: orangered;
+  color: white;
+  position: relative;
+  top: -60rpx;
+  right: -15px;
+}
+
+.hidden-left {
+  display: inline-block;
+  width: 340rpx;
+}
+
+.hidden-top {
+  padding: 40rpx 0rpx;
+  height: 90rpx;
+  line-height: 60rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hidden-top .jian, .hidden-top .jia {
+  padding: 0px 60rpx;
+}
+
+.hidden-foot {
+  padding: 1rpx 0rpx;
+  text-align: center;
+  position: relative;
+  top: -20px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+#foot {
+  line-height: 100rpx;
+  width: 750rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 1px;
+  clear: both;
+  background: white;
+  border-top: 1px solid #ccc;
+}
+
+#all {
+  padding-left: 20rpx;
+  float: left;
+}
+
+.ctr {
+  position: relative;
+  top: 7rpx;
+}
+
+#total {
+  padding-right: 10rpx;
+  float: right;
+}
+
+#submit {
+  margin: 0px;
+  padding: 0rpx 45rpx 0rpx 40rpx;
+  float: right;
+  color: white;
+  background: orangered;
+}

@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view >
+    <swiper id="banner" interval="2000" duration="1000" autoplay circular indicator-dots>
+        <swiper-item>
+            <image src="../../image/01.jpg" mode="scaleToFill" style="width:750rpx;"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="../../image/02.jpg" mode="scaleToFill" style="width:750rpx;"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="../../image/03.jpg" mode="scaleToFill" style="width:750rpx;"></image>
+        </swiper-item>
+    </swiper>
+
+    <view id='types'>
+        <block wx:for="{{typelist}}" wx:key="id">
+            <view class='list-item' bindtap="navigateToShop" data-id="{{item.id}}">
+                <view class='item-head'>
+                    <image src="../../image/{{item.pic}}.png" mode="aspectFit"></image>
+                </view>
+                <view class='item-foot'>
+                    {{item.name}}
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <block wx:for="{{typelist}}" wx:key="id">
+        <view class='goodlist'>
+            <view class='good-head'>
+                <text>{{item.name}}</text>
+                <text class='right more' bindtap="navigateToShop" data-id="{{item.id}}"> 1 </text>
+            </view>
+            <view class='good-body'>
+                <block wx:for="{{item.goods}}" wx:key="id" wx:for-item="good">
+                    <view class='good-item' bindtap="navigateToGood" data-id="{{good.id}}">
+                        <view class='good-pic'>
+                            <image src="{{good.pic}}" mode="aspectFill"></image>
+                        </view>
+                        <view class='good-desc'>
+                            <view class='good-title'>{{good.title}}</view>
+                            <text class='good-price'>$ {{good.price}}</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </block>
+
+</view>
+

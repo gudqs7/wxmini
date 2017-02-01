@@ -1,0 +1,93 @@
+/* pages/index/good/good.wxss */
+
+#search {
+  top: 0px;
+  clear: both;
+  border: 1px solid orangered;
+  border-radius: 20rpx;
+  padding: 15rpx 15rpx 7rpx 20rpx;
+  left: 20rpx;
+  margin: 10rpx 20rpx;
+}
+
+#search input {
+  display: inline-block;
+  width: 350rpx;
+}
+
+#search button {
+  float: right;
+  color: white;
+  background: orangered;
+}
+
+#filter {
+  margin: 8rpx 30rpx;
+  background: white;
+  white-space: nowrap;
+}
+/*
+
+*/
+.type-item {
+  border: 1px solid #555;
+  border-radius: 30rpx;
+  margin: 10rpx 8rpx;
+  display: inline-block;
+  padding: 8rpx 20rpx;
+  color: #555;
+}
+
+.active {
+  border: 1px solid orangered;
+  color: orangered;
+}
+
+#goodlist {
+  clear: both;
+  margin: 00rpx 10px;
+  padding-bottom: 40rpx;
+  font-size: 14px;
+}
+
+.good-head {
+  padding: 10rpx 0px;
+  padding-left: 10rpx;
+  font-size: 20px;
+  padding-top: 70rpx;
+}
+
+.right {
+  float: right;
+}
+
+.more {
+  display: block;
+  width: 100rpx;
+  color: white;
+  background: url(../../image/typemore.png) no-repeat 45rpx center;
+}
+
+.good-body {
+  padding: 10rpx 0px;
+}
+
+.good-item {
+  padding: 10rpx 10rpx;
+  width: 335rpx;
+  float: left;
+}
+
+.good-pic image {
+  width: 335rpx;
+  height: 300rpx;
+}
+
+.good-title {
+  padding: 10rpx 0px;
+  font-size: 12px;
+}
+
+.good-price {
+  color: orangered;
+}

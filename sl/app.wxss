@@ -1,0 +1,35 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.icon_edit{
+  padding-left: 40rpx;
+  padding-right: 10rpx;
+  background: url(../../image/edit.png) no-repeat 0rpx center ;
+}
+
+.icon_trash{
+  padding-left: 40rpx;
+  background: url(../../image/delete.png) no-repeat 0rpx center ;
+}
+
+#nothing{
+  margin: 50% auto;
+  text-align: center;
+  color: darkgray;
+  
+
+}
+
+#nothing navigator{
+  display: inline-block;
+  color: orangered;
+  text-decoration: underline;
+}

@@ -1,0 +1,66 @@
+/* pages/addr/addr.wxss */
+
+#addrlist {
+  height: 1146rpx;
+  margin-bottom: 45rpx;
+  color: #666;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#add {
+  padding: 30rpx 0px;
+  text-align: center;
+  background: #f31;
+  color: white;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+.list-item {
+  font-size: 16px;
+  padding: 30rpx;
+  padding-bottom: 80rpx;
+  margin-bottom: 30rpx;
+  background: white;
+}
+
+.item-head {
+  padding-bottom: 20rpx;
+}
+
+.item-desc {
+  font-size: 16px;
+}
+
+.item-edit {
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1px #ccc solid;
+}
+
+.right {
+  float: right;
+  padding-right: 20rpx;
+}
+
+.item-edit .right {
+  padding-top: 10rpx;
+  float: right;
+  padding-right: 20rpx;
+}
+
+.left {
+  float: left;
+  vertical-align: middle;
+}
+
+.chk-active {
+  color: #f31;
+}
+
+.ctr {
+  position: relative;
+  top: 6rpx;
+}
+

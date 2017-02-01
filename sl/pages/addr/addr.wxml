@@ -1,0 +1,78 @@
+<view style='background:#eee;'>
+
+  <!--pages/addr/addr.wxml-->
+  <scroll-view id='addrlist' scroll-y>
+    <block wx:for="{{addrlist}}" wx:key="addr">
+      <view class='list-item' wx:if="{{item.isDefault}}">
+        <view class='item-head'>
+          <text>{{item.name}}</text>
+          <text class='right'>18670321728</text>
+        </view>
+        <view class='item-desc'>
+          <text>{{item.province}}省{{item.city}}市{{item.area}}</text>
+          <text>{{item.street}}</text>
+          <text>{{item.desc}}</text>
+        </view>
+        <view class='item-edit'>
+          <view class='left chk-active'>
+            <switch type="checkbox" disabled checked />
+            <text class='ctr'>默认地址</text>
+          </view>
+          <view class='right'>
+            <text class='icon_edit' bindtap="navigateToEdit" data-id="{{item.id}}">编辑</text>
+            <text class='icon_trash' bindtap="delAddr" data-id="{{item.id}}">删除</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:for="{{addrlist}}" wx:key="addr">
+      <view class='list-item' wx:if="{{item.isDefault==false&&item.isLast==false}}">
+        <view class='item-head'>
+          <text>{{item.name}}</text>
+          <text class='right'>18670321728</text>
+        </view>
+        <view class='item-desc'>
+          <text>{{item.province}}省{{item.city}}市{{item.area}}</text>
+          <text>{{item.street}}</text>
+          <text>{{item.desc}}</text>
+        </view>
+        <view class='item-edit'>
+          <view class='left'>
+            <switch type="checkbox" bindchange="beDefault" data-id="{{item.id}}" checked="{{item.isDefault}}" />
+            <text class='ctr'>设为默认</text>
+          </view>
+          <view class='right'>
+            <text class='icon_edit' bindtap="navigateToEdit" data-id="{{item.id}}">编辑</text>
+            <text class='icon_trash' bindtap="delAddr" data-id="{{item.id}}">删除</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:for="{{addrlist}}" wx:key="addr">
+      <view class='list-item' wx:if="{{item.isDefault==false&&item.isLast}}" style='margin-bottom:100rpx;'>
+        <view class='item-head'>
+          <text>{{item.name}}</text>
+          <text class='right'>18670321728</text>
+        </view>
+        <view class='item-desc'>
+          <text>{{item.province}}省{{item.city}}市{{item.area}}</text>
+          <text>{{item.street}}</text>
+          <text>{{item.desc}}</text>
+        </view>
+        <view class='item-edit'>
+          <view class='left'>
+            <switch type="checkbox" bindchange="beDefault" data-id="{{item.id}}" checked="{{item.isDefault}}" />
+            <text class='ctr'>设为默认</text>
+          </view>
+          <view class='right'>
+            <text class='icon_edit' bindtap="navigateToEdit" data-id="{{item.id}}">编辑</text>
+            <text class='icon_trash' bindtap="delAddr" data-id="{{item.id}}">删除</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view id='add' bindtap='navigateToAdd'>
+    添加新地址
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<view style="background:#eee;">
+
+  <!--pages/addr/edit/edit.wxml-->
+  <form bindsubmit="saveAddr">
+    <view id='edit'>
+      <view class='edit-item'>
+        <text>收货人</text>
+        <input type="text" maxlength="20" placeholder="请输入姓名" name="name" value="{{addr.name}}" />
+      </view>
+      <view class='hr'></view>
+      <view class='edit-item'>
+        <text>联系电话</text>
+        <input type="text" maxlength="11" placeholder="请输入联系电话" name="phone" value="{{addr.phone}}" />
+      </view>
+      <view class='hr'></view>
+      <view class='edit-item'>
+        <text>所在地区</text>
+        <picker mode="selector" name='area' value='{{area_idx}}' range="{{areas}}" bindchange="areaChange">
+          <view class='picker_last'>
+            {{areas[area_idx]}}
+          </view>
+        </picker>
+        <picker mode="selector" name='city' value='{{city_idx}}' range="{{citys}}" bindchange="cityChange">
+          <view>
+            {{citys[city_idx]}}
+          </view>
+        </picker>
+        <picker mode="selector" name='province' value='{{province_idx}}' range="{{provinces}}" bindchange="provinceChange">
+          <view>
+            {{provinces[province_idx]}}
+          </view>
+        </picker>
+      </view>
+      <view class='hr'></view>
+      <view class='edit-item'>
+        <text>街道</text>
+        <picker mode="selector" name='street' value='{{street_idx}}' range="{{streets}}" bindchange="streetChange">
+          <view class='picker_last'>
+            {{streets[street_idx]}}
+          </view>
+        </picker>
+      </view>
+      <view class='hr'></view>
+      <view class='edit-item'>
+        <textarea name="desc" maxlength="500" placeholder="请输入详细地址" style="height:200rpx;" value="{{addr.desc}}" />
+      </view>
+    </view>
+    <view id='default'>
+      设为默认地址
+      <switch type="switch" checked="{{addr.isDefault}}" name="isDefault" />
+    </view>
+    <view id='del' wx:if="{{addr.id}}">
+      <text data-id="{{addr.id}}" bindtap="delAddr">删除地址</text>
+    </view>
+    <view id='submit'>
+      <button type="primary" form-type="submit">保存</button>
+    </view>
+  </form>
+</view>

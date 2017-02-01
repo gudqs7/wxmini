@@ -1,0 +1,125 @@
+/* pages/user/order/order.wxss */
+#tabbar{
+    margin: 0px auto;
+    text-align: center;
+}
+
+.bar-item{
+    display: inline-block;
+    padding: 20rpx 50rpx;
+    width: 150rpx;
+    background: white;
+    color: #444;
+    font-size: 36rpx;
+}
+
+#tabbar .active{
+    border-bottom:2px solid orangered;
+    color: orangered; 
+}
+
+#orders{
+    display: block;
+    height: 1162rpx;
+}
+
+.orderlist{
+    height: 1162rpx;
+}
+
+.red{
+    color: orangered;
+    padding-right: 20rpx;
+}
+
+.right{
+    float: right;
+}
+
+.middleline{
+    text-decoration: line-through;
+}
+
+.order-item{
+    padding: 2px 0px ;
+    clear: both;
+    background: white;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 40rpx; 
+}
+
+.item-head{
+    clear: both;
+    padding: 20rpx 20rpx;
+    font-size: 16px;
+}
+
+.item-foot{
+    border-top: 1px #ccc solid;
+    padding: 10rpx 0px;
+    clear: both;
+}
+
+.item-body {
+  padding: 0rpx 0rpx;
+  clear: both;
+  height: 250rpx;
+  margin: 0px;
+  background: #fcfcfc;
+}
+
+.item-body2{
+    text-align: right;
+    padding: 10rpx 20rpx;
+}
+
+.body-left {
+  width: 250rpx;
+  display: inline-block;
+  padding-left: 20rpx;
+}
+
+.body-left .ctr {
+  position: relative;
+  display: inline;
+  left: 10rpx;
+}
+
+.body-right {
+  padding-left: 5rpx;
+  padding-right: 15rpx;
+  width: 450rpx;
+  clear: both;
+  display: inline-block;
+  color: #777;
+}
+
+.right-head {
+  padding: 10rpx 0rpx;
+  font-size: 14px;
+}
+
+.right-middle {
+  padding: 10rpx 0rpx;
+  font-size: 16px;
+}
+
+.right-foot {
+  padding: 10rpx 0rpx;
+  font-size: 16px;
+}
+
+.btns{
+    text-align: right;
+    padding-right: 20rpx;
+    vertical-align: middle;
+    padding-top: 12rpx;
+}
+
+.btn{
+    display: inline-block;
+    color: #111;
+    font-size: 16px;
+    margin-left: 20rpx;
+}

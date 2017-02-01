@@ -1,0 +1,43 @@
+<!--pages/index/good/good.wxml-->
+<view >
+    <view id='search'>
+        <form bindsubmit="searchGood">
+            <input name='keyword' placeholder="请输入搜索关键字" type="text" maxlength="50" placeholder-style="color:red" />
+            <button form-type="submit" size="mini" >搜索</button>
+        </form>
+    </view>
+    <view id='filter'>
+        <scroll-view scroll-x style="width:100%;" >
+            <block wx:for="{{typelist}}" wx:key="id">
+                <block wx:if="{{typeId==item.id}}">
+                    <view class='type-item active' catchtap="searchGoodByTypeId" data-id="{{item.id}}">
+                        {{item.name}}
+                    </view>
+                </block>
+                <block wx:if="{{typeId!=item.id}}">
+                    <view class='type-item' catchtap="searchGoodByTypeId" data-id="{{item.id}}">
+                        {{item.name}}
+                    </view>
+                </block>
+            </block>
+        </scroll-view>
+    </view>
+
+
+
+    <view id='goodlist'>
+        <view class='good-body'>
+            <block wx:for="{{goodlist}}" wx:key="{{orderBy}}" wx:for-item="good">
+                <view class='good-item' bindtap="navigateToGood" data-id="{{good.id}}">
+                    <view class='good-pic'>
+                        <image src="{{good.pics[0]}}" mode="aspectFill"></image>
+                    </view>
+                    <view class='good-desc'>
+                        <view class='good-title'>{{good.title}}</view>
+                        <text class='good-price'>$ {{good.price}}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+        </view>
+</view>

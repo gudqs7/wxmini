@@ -1,0 +1,178 @@
+
+<!--pages/user/order/order.wxml-->
+<view style="background:#eee;">
+  <view id='tabbar'>
+    <block wx:if="{{typeId==0}}">
+      <text bindtap="changeToAll" class='bar-item active'>全部订单</text>
+    </block>
+    <block wx:if="{{typeId!=0}}">
+      <text bindtap="changeToAll" class='bar-item'>全部订单</text>
+    </block>
+    <block wx:if="{{typeId==1}}">
+      <text bindtap="changeToPay" class='bar-item active'>待付款</text>
+    </block>
+    <block wx:if="{{typeId!=1}}">
+      <text bindtap="changeToPay" class='bar-item'>待付款</text>
+    </block>
+    <block wx:if="{{typeId==2}}">
+      <text bindtap="changeToShou" class='bar-item active'>待收货</text>
+    </block>
+    <block wx:if="{{typeId!=2}}">
+      <text bindtap="changeToShou" class='bar-item'>待收货</text>
+    </block>
+  </view>
+  <swiper id='orders' current="{{typeId}}" bindchange="changeType">
+    <swiper-item>
+      <block wx:if="{{orderlist==null||orderlist.length==0}}">
+        <view id='nothing'>订单空空的,去
+          <navigator url="../../cart/cart" open-type="switchTab">购物车</navigator> 看看吧!
+        </view>
+      </block>
+      <scroll-view scroll-y class='orderlist'>
+        <block wx:for="{{orderlist}}">
+          <view class='order-item'>
+            <view class='item-head'>
+              <text bindtap="navigateToShop" data-id="{{item.good.type.id}}"> {{item.good.type.name}}</text>
+              <text class='red right'>{{item.status}}</text>
+            </view>
+            <view class='item-body' bindtap="navigateToOrderView" data-id="{{item.id}}">
+              <view class='body-left'>
+                <image src="../../../image/v500.png" mode="aspectFill" style='width:210rpx; height:210rpx;'></image>
+              </view>
+              <view class='body-right'>
+                <view class='right-head'>
+                  {{item.good.title}}
+                </view>
+                <view class='right-middle'>
+                  套餐类型 : {{item.good.tcs[item.good.tc]}}
+                </view>
+                <view class='right-foot'>
+                  <text class='red'>$ {{item.good.tcprices[item.good.tc]}} </text>
+                  <text class='middleline'>$ {{item.good.prevprice}}</text>
+                  <text class='right'>× {{item.num}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='item-body2'>
+              合计:
+              <text class='red'>$ {{item.totalPrice}}</text>
+            </view>
+            <view class='item-foot'>
+              <view class='btns'>
+                <block wx:if="{{item.status=='未付款'}}">
+                  <button plain class='btn' size="mini" bindtap="payOrder" data-id="{{item.id}}">付款</button>
+                  <button plain class='btn' size="mini" bindtap="cancelOrder" data-id="{{item.id}}">取消订单</button>
+                </block>
+                <block wx:if="{{item.status=='待收货'}}">
+                  <button plain class='btn' size="mini" bindtap="viewWuLiu" data-id="{{item.id}}">查看物流</button>
+                  <button plain class='btn' size="mini" bindtap="confirmOrder" data-id="{{item.id}}">确认收货</button>
+                </block>
+                <block wx:if="{{item.status=='交易关闭'}}">
+                  <button plain class='btn' size="mini" bindtap="delOrder" data-id="{{item.id}}">删除订单</button>
+                </block>
+                <block wx:if="{{item.status=='交易成功'}}">
+                  <button plain class='btn' size="mini" bindtap="viewWuLiu" data-id="{{item.id}}">查看物流</button>
+                  <button plain class='btn' size="mini" bindtap="delOrder" data-id="{{item.id}}">删除订单</button>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <block wx:if="{{orderlist==null||orderlist.length==0}}">
+        <view id='nothing'>订单空空的,去
+          <navigator url="../../cart/cart" open-type="switchTab">购物车</navigator> 看看吧!
+        </view>
+      </block>
+      <scroll-view scroll-y class='orderlist'>
+        <block wx:for="{{orderlist}}">
+          <view class='order-item'>
+            <view class='item-head'>
+              <text bindtap="navigateToShop" data-id="{{item.good.type.id}}"> {{item.good.type.name}}</text>
+              <text class='red right'>{{item.status}}</text>
+            </view>
+            <view class='item-body' bindtap="navigateToOrderView" data-id="{{item.id}}">
+              <view class='body-left'>
+                <image src="../../../image/v500.png" mode="aspectFill" style='width:210rpx; height:210rpx;'></image>
+              </view>
+              <view class='body-right'>
+                <view class='right-head'>
+                  {{item.good.title}}
+                </view>
+                <view class='right-middle'>
+                  套餐类型 : {{item.good.tcs[item.good.tc]}}
+                </view>
+                <view class='right-foot'>
+                  <text class='red'>$ {{item.good.tcprices[item.good.tc]}} </text>
+                  <text class='middleline'>$ {{item.good.prevprice}}</text>
+                  <text class='right'>× {{item.num}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='item-body2'>
+              合计:
+              <text class='red'>$ {{item.totalPrice}}</text>
+            </view>
+            <view class='item-foot'>
+              <view class='btns'>
+                <block wx:if="{{item.status=='未付款'}}">
+                  <button plain class='btn' size="mini" bindtap="payOrder" data-id="{{item.id}}">付款</button>
+                  <button plain class='btn' size="mini" bindtap="cancelOrder" data-id="{{item.id}}">取消订单</button>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <block wx:if="{{orderlist==null||orderlist.length==0}}">
+        <view id='nothing'>订单空空的,去
+          <navigator url="../../cart/cart" open-type="switchTab">购物车</navigator> 看看吧!
+        </view>
+      </block>
+      <scroll-view scroll-y class='orderlist'>
+        <block wx:for="{{orderlist}}">
+          <view class='order-item'>
+            <view class='item-head'>
+              <text bindtap="navigateToShop" data-id="{{item.good.type.id}}"> {{item.good.type.name}}</text>
+              <text class='red right'>{{item.status}}</text>
+            </view>
+            <view class='item-body' bindtap="navigateToOrderView" data-id="{{item.id}}">
+              <view class='body-left'>
+                <image src="../../../image/v500.png" mode="aspectFill" style='width:210rpx; height:210rpx;'></image>
+              </view>
+              <view class='body-right'>
+                <view class='right-head'>
+                  {{item.good.title}}
+                </view>
+                <view class='right-middle'>
+                  套餐类型 : {{item.good.tcs[item.good.tc]}}
+                </view>
+                <view class='right-foot'>
+                  <text class='red'>$ {{item.good.tcprices[item.good.tc]}} </text>
+                  <text class='middleline'>$ {{item.good.prevprice}}</text>
+                  <text class='right'>× {{item.num}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='item-body2'>
+              合计:
+              <text class='red'>$ {{item.totalPrice}}</text>
+            </view>
+            <view class='item-foot'>
+              <view class='btns'>
+                <block wx:if="{{item.status=='待收货'}}">
+                  <button plain class='btn' size="mini" bindtap="viewWuLiu" data-id="{{item.id}}">查看物流</button>
+                  <button plain class='btn' size="mini" bindtap="confirmOrder" data-id="{{item.id}}">确认收货</button>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

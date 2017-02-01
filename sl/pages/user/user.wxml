@@ -1,0 +1,24 @@
+<!--pages/user/user.wxml-->
+<view id="userhead" bindlongtap="showUserTip" bindtap="showUserTip">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+</view>
+<view id="other">
+  <view id='addr' bindtap="navigateToAddr">
+    我的地址
+  </view>
+
+  <view id='order'>
+    <view class='order-item' style="background-image: url(../../image/order.png); background-position:20rpx center" bindtap="navigateToOrder">
+      全部订单<text class='more'></text> 
+    </view>
+    <view class='order-item' style="background-image: url(../../image/pay.png); background-position:20rpx center" bindtap="navigateToOrder_pay">
+      待付款<text class='more'></text> 
+    </view>
+    <view class='order-item' style="background-image: url(../../image/need.png); background-position:20rpx center" bindtap="navigateToOrder_get">
+      待收货<text class='more'></text> 
+    </view>
+  </view>
+</view>

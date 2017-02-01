@@ -1,0 +1,88 @@
+/* pages/index/good/detail/detail.wxss */
+#pics{
+    width: 100%;
+    display: block;
+}
+
+.pic{
+    width: 100%;
+}
+
+#desc{
+    background: white;
+    padding: 20rpx 30rpx;
+    font-size: 16px;
+
+}
+
+.title{
+    line-height: 40rpx;
+}
+
+.price{
+    color: orangered;
+    font-size: 22px;
+}
+
+.prevprice{
+    color: #555;
+    font-size: 12px;
+}
+
+.prevprice text{
+    
+    text-decoration: line-through;
+}
+
+#foot{
+    position: fixed;
+    bottom: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.cart{
+    text-align: center;
+    display: inline-block;
+    width: 371rpx;
+    padding: 29rpx 0rpx;
+    font-size: 12px;
+    color: white;
+    background: orange;
+    margin: 0px;
+}
+
+.buy{
+    text-align: center;
+    display: inline-block;
+    width: 372rpx;
+    padding: 29rpx 0rpx;
+    font-size: 12px;
+    color: white;
+    background: orangered;
+    margin: 0px;
+}
+
+#tc{
+    margin: 40rpx 0px;
+    padding: 20rpx;
+    background: white;
+}
+
+#twxq{
+    padding: 0rpx 0rpx;
+    background: white;
+    margin-bottom:100rpx; 
+}
+
+#twxq .head{
+    display: block;
+    padding: 20rpx 40rpx ;
+    color: #555; 
+    text-align: center;
+}
+
+.text{
+    width: 100%;
+    color: #111;
+}

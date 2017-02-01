@@ -1,0 +1,49 @@
+<!--pages/index/good/detail/detail.wxml-->
+<view style="background:#eee">
+    <scroll-view scroll-y style="height:1130rpx">
+        <swiper id='pics' indicator-dots >
+        <block wx:for="{{good.pics}}">
+            <swiper-item>
+                <image src="{{item}}" mode="aspectFill"  class='pic'></image>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view id='desc'>
+        <view class='title'>
+            {{good.title}}
+        </view>
+        <view class='price'>
+           $ {{good.tcprices[good.tc]}}
+        </view>
+        <view class='prevprice'>
+            价格: <text>{{good.prevprice}}</text> 
+        </view>
+        
+    </view>
+
+    <view id='tc'>
+        <picker bindchange="changeTc" mode="selector" range="{{good.tcs}}" value="{{good.tc}}">
+           套餐选择: <text>{{good.tcs[good.tc]}}</text>
+        </picker>
+    </view>
+
+    <view id='twxq'>
+        <text class='head'>图文详情</text>
+        <block wx:for="{{good.xqs}}">
+            <block wx:if="{{item.type==0}}">
+                <image src="{{item.content}}" class='pic' mode="aspectFill"></image>
+            </block>
+            <block wx:if="{{item.type==1}}">
+                <text class='text'>{{item.content}}</text>
+            </block>
+        </block>
+    </view>
+    </scroll-view>
+
+    <view id='foot'>
+        <text class='cart' bindtap="addToCart">加入购物车</text>
+        <text class='buy' bindtap="buyNow">立即购买</text>
+    </view>
+
+</view>

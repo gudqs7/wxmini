@@ -1,0 +1,74 @@
+/**index.wxss**/
+
+#banner {
+	display: block;
+}
+
+#types {
+	margin: 0rpx 25rpx;
+	padding: 0rpx 00px;
+	background: white;
+	font-size: 16px;
+	text-align: center;
+	color: #555;
+	clear: both;
+}
+
+.list-item {
+	padding: 10rpx 13rpx;
+	float: left;
+}
+
+.item-head image {
+	width: 150rpx;
+	height: 150rpx;
+}
+
+.goodlist {
+	clear: both;
+	margin: 00rpx 10px;
+	padding-bottom: 40rpx;
+	font-size: 14px;
+}
+
+.good-head {
+	padding: 10rpx 0px;
+	padding-left: 10rpx;
+	font-size: 20px;
+	padding-top: 70rpx;
+}
+
+.right {
+	float: right;
+}
+
+.more{
+	display: block;
+	width: 100rpx;
+	color:white;
+	background: url(../../image/typemore.png) no-repeat 45rpx center;
+}
+
+.good-body {
+	padding: 10rpx 0px;
+}
+
+.good-item{
+	padding: 10rpx 10rpx;
+	width: 335rpx;
+	float: left;
+}
+
+.good-pic image{
+	width: 335rpx;
+	height: 300rpx;
+}
+
+.good-title{
+	padding: 10rpx 0px;
+	font-size: 12px;
+}
+
+.good-price{
+	color: orangered;
+}

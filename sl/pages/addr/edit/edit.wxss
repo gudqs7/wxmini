@@ -1,0 +1,71 @@
+/* pages/addr/edit/edit.wxss */
+#edit{
+    background: white;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.edit-item{
+    clear: both;
+    padding: 12rpx 0rpx;
+}
+
+.edit-item text{
+    line-height: 30px;
+    padding-left: 25rpx;
+    float: left;
+}
+
+.edit-item input{
+    float: right;
+    position: relative;
+    left: -115rpx;
+}
+
+.edit-item picker{
+    float: right;
+    padding-right: 30rpx;
+    padding-top: 8rpx;
+    color:#666;
+}
+
+.edit-item textarea{
+    padding-top: 25rpx;
+    padding-left: 25rpx;
+}
+
+.picker_last{
+    background: url(../../../image/more.png) no-repeat right 1px;
+    padding-right: 30rpx;
+}
+
+.hr{
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    top: 52rpx;
+}
+
+#default{
+    margin: 10px 0px;
+    padding: 20rpx;
+    background: white;
+    clear: both;
+    font-size: 18px;
+}
+
+#default switch{
+    float: right;
+    position: relative;
+    bottom: 10rpx;
+}
+
+#del{
+    margin: 20px 0px;
+    padding: 20rpx;
+    background: white;
+    color:red;
+    font-size: 18px;
+}
+

@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/good/detail/detail",
+    "pages/index/good/good",
+    "pages/cart/cart",
+    "pages/user/order/order",
+    "pages/user/order/detail/detail",
+    "pages/addr/edit/edit",
+    "pages/user/user",
+    "pages/addr/addr"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "猴哥数码城",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon_all.png",
+        "selectedIconPath": "image/icon_all_se.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "image/cart.png",
+        "selectedIconPath": "image/cart_se.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "image/account.png",
+        "selectedIconPath": "image/account_se.png"
+      }
+    ]
+  }
+}

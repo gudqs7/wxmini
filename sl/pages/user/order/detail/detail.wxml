@@ -1,0 +1,80 @@
+
+<!--pages/user/order/detail/detail.wxml-->
+<view style='background:#eee'>
+  <scroll-view scroll-y style="height:1150rpx;">
+    <view id='top'>
+      {{order.status}}
+    </view>
+    <view id='address'>
+      <view class='wuliu'>
+        <text class='success'>[长沙市]已签收(前台),感谢使用顺风快递,期待再次为您服务,感谢使用顺风快递,期待再次为您服务</text>
+      </view>
+      <view class='addrinfo'>
+        <view>收货人: Guddqs
+          <text class='right'>18670321728</text>
+        </view>
+        <view>收货地址: 湖南省长沙施开福区 芙蓉北路街道 汽车北站北大青鸟科泰校区</view>
+      </view>
+    </view>
+    <view id='goodinfo'>
+      <view class='order-head'>
+        <text bindtap="navigateToShop" data-id="{{order.good.type.id}}"> {{order.good.type.name}}</text>
+      </view>
+      <view class='order-body' bindtap="navigateToGoodView" data-id="{{order.good.id}}">
+        <view class='body-left'>
+          <image src="../../../../image/v500.png" mode="aspectFill" style='width:210rpx; height:210rpx;'></image>
+        </view>
+        <view class='body-right'>
+          <view class='right-head'>
+            {{order.good.title}}
+          </view>
+          <view class='right-middle'>
+            套餐类型 : {{order.good.tcs[order.good.tc]}}
+          </view>
+          <view class='right-foot'>
+            <text class='red'>$ {{order.good.tcprices[order.good.tc]}} </text>
+            <text class='middleline'>$ {{order.good.prevprice}}</text>
+            <text class='right'>× {{order.num}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view id='orderinfo'>
+      <view>
+        订单总价:
+        <text class='red'>$ {{order.totalPrice}}</text>
+      </view>
+      <view>
+        订单编号: {{order.no}}
+      </view>
+      <view>
+        创建时间: {{order.createTime}}
+      </view>
+      <view wx:if="{{order.status!='未付款'}}">
+        付款时间: {{order.payTime}}
+      </view>
+      <view wx:if="{{order.status=='交易成功'}}">
+        成交时间: {{order.successTime}}
+      </view>
+    </view>
+  </scroll-view>
+  <view id='foot'>
+    <view class='btns'>
+      <block wx:if="{{order.status=='未付款'}}">
+        <button plain class='btn' size="mini" bindtap="payOrder" data-id="{{order.id}}">付款</button>
+        <button plain class='btn' size="mini" bindtap="cancelOrder" data-id="{{order.id}}">取消订单</button>
+      </block>
+      <block wx:if="{{order.status=='待收货'}}">
+        <button plain class='btn' size="mini" bindtap="viewWuLiu" data-id="{{order.id}}">查看物流</button>
+        <button plain class='btn' size="mini" bindtap="confirmOrder" data-id="{{order.id}}">确认收货</button>
+      </block>
+      <block wx:if="{{order.status=='交易关闭'}}">
+        <button plain class='btn' size="mini" bindtap="delOrder" data-id="{{order.id}}">删除订单</button>
+      </block>
+      <block wx:if="{{order.status=='交易成功'}}">
+        <button plain class='btn' size="mini" bindtap="viewWuLiu" data-id="{{order.id}}">查看物流</button>
+        <button plain class='btn' size="mini" bindtap="delOrder" data-id="{{order.id}}">删除订单</button>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+/* pages/user/user.wxss */
+
+#userhead {
+  padding: 40rpx 0rpx 30rpx 70rpx;
+  background-color: #f13;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  padding: 0rpx 0rpx 100rpx 50rpx;
+  color: blanchedalmond;
+  font-size: 20px;
+  position: relative;
+  bottom: 50rpx;
+}
+
+#other {
+  margin: 40rpx 0px;
+}
+
+#addr {
+  line-height: 30px;
+  margin: 10rpx 0px;
+  padding: 20rpx 0px 20rpx 100rpx;
+  border: solid #ccc 1px;
+  border-left: none;
+  border-right: none;
+  background-color: white;
+  background-image: url(../../image/address.png);
+  background-repeat: no-repeat;
+  background-position: 20rpx center;
+}
+
+#order {
+  margin: 30rpx 0px;
+  background-color: white;
+  border-top: solid #ccc 1px;
+}
+
+.order-item {
+  line-height: 30px;
+  padding: 20rpx 0px 20rpx 100rpx;
+  border-bottom: 1px #ccc solid;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 15rpx 25rpx;
+}
+
+.more {
+  background: url(../../image/bigmore.png) no-repeat 19rpx 1px;
+  float: right;
+  height: 80rpx;
+  width: 100rpx;
+}

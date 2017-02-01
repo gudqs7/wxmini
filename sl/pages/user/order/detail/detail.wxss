@@ -1,0 +1,124 @@
+/* pages/user/order/detail/detail.wxss */
+#goodinfo{
+    background: white;
+    margin: 30rpx auto;
+    padding: 0px;
+}
+
+#top{
+    padding: 80rpx 80rpx;
+    color: white;
+    font-size: 19px;
+    background: url(../../../../image/gifts.png) no-repeat 500rpx center orangered;
+}
+
+#foot{
+    position: fixed;
+    bottom: 0px;
+    border-top: 1px solid #ccc;
+    padding: 10rpx 0rpx;
+}
+
+#address{
+    background: white;
+    padding: 22rpx 16rpx;
+    font-size: 16px;
+}
+
+#orderinfo{
+    padding: 16rpx 0px 16rpx 30rpx;
+    background: white;
+    color: #888;
+    font-size: 14px;
+}
+
+.addrinfo{
+    border-top: 1px solid #ccc;
+    padding: 16px 10px 16rpx 70rpx;
+    background: url(../../../../image/saddress.png) no-repeat 0rpx center white; 
+}
+
+.wuliu{
+    color:#009933;
+    background: white;
+    padding: 0px 10px 16rpx 70rpx;
+    background: url(../../../../image/greenneed.png) no-repeat 0rpx center white; 
+}
+
+.red{
+    color: orangered;
+    padding-right: 20rpx;
+}
+
+.right{
+    float: right;
+}
+
+.middleline{
+    text-decoration: line-through;
+}
+
+.order-head{
+    clear: both;
+    padding: 20rpx 20rpx;
+    font-size: 16px;
+}
+
+.order-body {
+  padding: 0rpx 0rpx;
+  clear: both;
+  height: 250rpx;
+  margin: 0px;
+  background: #fcfcfc;
+}
+
+.body-left {
+  width: 250rpx;
+  display: inline-block;
+  padding-left: 20rpx;
+}
+
+.body-left .ctr {
+  position: relative;
+  display: inline;
+  left: 10rpx;
+}
+
+.body-right {
+  padding-left: 5rpx;
+  padding-right: 15rpx;
+  width: 450rpx;
+  clear: both;
+  display: inline-block;
+  color: #777;
+}
+
+.right-head {
+  padding: 10rpx 0rpx;
+  font-size: 14px;
+}
+
+.right-middle {
+  padding: 10rpx 0rpx;
+  font-size: 16px;
+}
+
+.right-foot {
+  padding: 10rpx 0rpx;
+  font-size: 16px;
+}
+
+.btns{
+    width: 720rpx;
+    text-align: right;
+    padding-right: 40rpx;
+    vertical-align: middle;
+    padding-top: 12rpx;
+}
+
+.btn{
+    display: inline-block;
+    color: #111;
+    font-size: 16px;
+    margin-left: 20rpx;
+}
